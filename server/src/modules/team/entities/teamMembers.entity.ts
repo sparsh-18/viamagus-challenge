@@ -1,4 +1,5 @@
-import { BaseEntity, Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm'
+import { Task } from 'src/modules/tasks/tasks.entity';
+import { BaseEntity, Entity, Column, PrimaryGeneratedColumn, ManyToOne, OneToMany } from 'typeorm'
 import { Team } from './team.entity';
 
 @Entity()
@@ -13,4 +14,7 @@ export class TeamMember extends BaseEntity {
 
     @ManyToOne(() => Team, (team) => team.teamMembers)
     team: Team
+
+    @OneToMany(() => Task, (task) => task.assignee)
+    tasks: Task[]
 }

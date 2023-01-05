@@ -35,7 +35,8 @@ export class TeamMemberService {
 
     async findMemberById(id: number): Promise<TeamMember> {
         return await this.teamMemberRepository.findOne({
-            where: {id: id}
+            where: {id: id},
+            relations: ['tasks']
         })
     }
     

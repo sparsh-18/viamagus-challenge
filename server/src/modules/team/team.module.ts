@@ -10,6 +10,7 @@ import { TeamMemberController } from './controllers/teamMember.controller';
 @Module({
     controllers:[TeamController, TeamMemberController],
     imports: [TypeOrmModule.forFeature([Team, TeamMember])],
-    providers: [TeamService, TeamMemberService]
+    providers: [TeamService, TeamMemberService],
+    exports: [TeamMemberService]
 })
 export class TeamModule {}
