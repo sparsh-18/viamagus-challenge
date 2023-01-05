@@ -14,7 +14,7 @@ export class TeamController {
 
     @Post('/createTeam')
     @UsePipes(ValidationPipe)
-    createTeam(@Body() teamdata: CreateTeamDto) {
-        return {data: teamdata}
+    async createTeam(@Body() teamdata: CreateTeamDto) {
+        return await this.teamService.createNewTeam(teamdata)
     }
 }
