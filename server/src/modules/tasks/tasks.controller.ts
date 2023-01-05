@@ -43,4 +43,13 @@ export class TaskController {
 
         return {task, member}
     }
+
+    @Get('/changestatus/:id')
+    async changeStatus(@Param('id', ParseIntPipe) id: number): Promise<Task>  {
+        const task = await this.taskService.findTaskById(id);
+
+        await this.taskService.changeStatus(task);
+
+        return task;
+    }
 }

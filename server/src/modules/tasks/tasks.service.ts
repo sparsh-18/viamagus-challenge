@@ -37,5 +37,11 @@ export class TaskService {
         
         return task;
     }
-    
+
+    async changeStatus(task: Task): Promise<Task> {
+        task.status = !task.status;
+        await task.save()
+        return task;
+    }
+   
 }
