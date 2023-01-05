@@ -1,5 +1,6 @@
-import { Body, Controller, Post, UsePipes, ValidationPipe } from "@nestjs/common";
+import { Body, Controller, Get, Param, ParseIntPipe, Post, UsePipes, ValidationPipe } from "@nestjs/common";
 import { CreateTeamMemberDto } from "../dto/CreateTeamMember.dto";
+import { TeamMember } from "../entities/teamMembers.entity";
 import { TeamService } from "../services/team.service";
 import { TeamMemberService } from "../services/teamMember.service";
 
@@ -9,6 +10,16 @@ export class TeamMemberController {
         private teamMemberService: TeamMemberService,
         private teamService: TeamService    
     ) {}
+    
+    @Get('/all')
+    async getAllTeamMembers(): Promise<TeamMember[]> {
+        return await this.teamMemberService.getAllMembers();
+    }
+
+    @Get('/:id')
+    async getTeamMemberById(@Param('id', ParseIntPipe) id: number): Promise<TeamMember> {
+        return await this.teamMemberService.findMemberById(id);
+    }
 
     @Post('/add')
     @UsePipes(ValidationPipe)

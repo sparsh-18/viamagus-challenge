@@ -27,5 +27,16 @@ export class TeamMemberService {
         return newMember;
 
     }
+
+
+    async getAllMembers(): Promise<TeamMember[]> {
+        return await this.teamMemberRepository.find()
+    }
+
+    async findMemberById(id: number): Promise<TeamMember> {
+        return await this.teamMemberRepository.findOne({
+            where: {id: id}
+        })
+    }
     
 }
