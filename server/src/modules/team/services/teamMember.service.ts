@@ -14,7 +14,7 @@ export class TeamMemberService {
         private teamMemberRepository: Repository<TeamMember>
     ) {}
 
-    async createMember(member: CreateTeamMemberDto, team: Team) {
+    async createMember(member: CreateTeamMemberDto, team: Team): Promise<TeamMember> {
 
         const newMember = await this.teamMemberRepository.save({
             name: member.name

@@ -13,7 +13,7 @@ export class TeamService {
         private teamRepository: Repository<Team>
     ) {}
 
-    async getAllTeam() {
+    async getAllTeam(): Promise<Team[]> {
         return await this.teamRepository.find()
     }
 
@@ -24,7 +24,7 @@ export class TeamService {
         })
     }
 
-    async createNewTeam(team: CreateTeamDto) {
+    async createNewTeam(team: CreateTeamDto): Promise<CreateTeamDto & Team> {
         return await this.teamRepository.save(team);
     }
 }

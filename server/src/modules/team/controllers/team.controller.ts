@@ -8,8 +8,8 @@ export class TeamController {
     constructor(private teamService: TeamService) {}
     
     @Get('/')
-    getAllTeam() {
-        return this.teamService.getAllTeam()
+    async getAllTeam() {
+        return await this.teamService.getAllTeam()
     }
 
     @Post('/createTeam')
