@@ -1,5 +1,6 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { Team } from 'src/modules/team/entities/team.entity';
+import { TeamMember } from 'src/modules/team/entities/teamMembers.entity';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
     type: 'mysql',
@@ -8,6 +9,6 @@ export const typeOrmConfig: TypeOrmModuleOptions = {
     username: 'root',
     password: '',
     database: 'viamagus-challenge',
-    entities: [Team],
+    entities: [Team, TeamMember],
     synchronize: true,
 }

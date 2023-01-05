@@ -1,4 +1,5 @@
-import { BaseEntity, Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { BaseEntity, Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
+import { TeamMember } from './teamMembers.entity';
 
 @Entity()
 export class Team extends BaseEntity {
@@ -9,4 +10,7 @@ export class Team extends BaseEntity {
         type: 'varchar',
     })
     name: string;
+
+    @OneToMany(() => TeamMember, teamMember => teamMember.team)
+    teamMembers: TeamMember[]
 }

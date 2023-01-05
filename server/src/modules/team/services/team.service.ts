@@ -13,8 +13,15 @@ export class TeamService {
         private teamRepository: Repository<Team>
     ) {}
 
-    getAllTeam() {
-        return [1, 2, 3, 4]
+    async getAllTeam() {
+        return await this.teamRepository.find()
+    }
+
+    async findTeamById(id: number): Promise<Team> {
+        return await this.teamRepository.findOne({
+            where: {id: id},
+            relations: ['teamMembers']
+        })
     }
 
     async createNewTeam(team: CreateTeamDto) {
