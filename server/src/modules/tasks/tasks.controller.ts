@@ -29,6 +29,16 @@ export class TaskController {
         return await this.taskService.createNewTask(taskdata)
     }
 
+    @Post('/createmany')
+    @UsePipes(ValidationPipe)
+    async createMultiple(@Body() taskdatas: CreateTaskDto[]){
+        await taskdatas.map(async data => {
+            await this.taskService.createNewTask(data)
+        })
+
+        return taskdatas;
+    }
+
     @Get('/assign/:id/:memid')
     async assignTask(
         @Param('id', ParseIntPipe) id: number,
