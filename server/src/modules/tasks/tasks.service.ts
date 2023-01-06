@@ -43,5 +43,22 @@ export class TaskService {
         await task.save()
         return task;
     }
+
+    async deassign(task: Task, member: TeamMember): Promise<Task> {
+        // member.tasks = [...member.tasks, task];
+
+        member.tasks = member.tasks.filter((t) => {
+            return task.id !== t.id;
+        })
+
+        await member.save();
+        
+        return task;
+    }
+
+    async deleteTask(task: Task): Promise<Task>{
+        
+        return await this.taskRepository.remove(task);
+    }
    
 }

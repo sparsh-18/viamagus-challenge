@@ -62,4 +62,25 @@ export class TaskController {
 
         return task;
     }
+
+    @Get('/deassign/:id/:memid')
+    async deassignTask(
+        @Param('id', ParseIntPipe) id: number,
+        @Param('memid', ParseIntPipe) memid: number)
+        : Promise<Task>
+    {
+        
+        const member = await this.teamMemberService.findMemberById(memid);
+        const task = await this.taskService.findTaskById(id);
+        
+        await this.taskService.deassign(task, member);
+
+        return task
+    }
+
+    @Get('/delete/:id')
+    async deleteTask(@Param('id', ParseIntPipe) id: number): Promise<Task> {
+        const task = await this.taskService.findTaskById(id);
+        return await this.taskService.deleteTask(task);
+    }
 }
