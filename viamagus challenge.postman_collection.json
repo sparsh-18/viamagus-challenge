@@ -1,0 +1,397 @@
+{
+	"info": {
+		"_postman_id": "4dd3601d-a3c8-4779-bbd8-08030e76ba3b",
+		"name": "viamagus challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"admin\",\n    \"password\": \"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/tasks/changestatus/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1NDYyLCJleHAiOjE2NzI5ODU3NjJ9.p5qj0hm3YOKEsUf1EjsRLanJT0wy_kzdPlyPfIPCK7g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tasks/changestatus/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"changestatus",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/tasks/createmany",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1NDYyLCJleHAiOjE2NzI5ODU3NjJ9.p5qj0hm3YOKEsUf1EjsRLanJT0wy_kzdPlyPfIPCK7g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"description\": \"This is task 6\",\n        \"status\": true,\n        \"due_date\": \"2023-03-04\"\n    },\n    {\n        \"description\": \"This is task 7\",\n        \"status\": true,\n        \"due_date\": \"2023-02-08\"\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks/createmany",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"createmany"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/tasks/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1NDYyLCJleHAiOjE2NzI5ODU3NjJ9.p5qj0hm3YOKEsUf1EjsRLanJT0wy_kzdPlyPfIPCK7g",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\": \"This is task 7\",\n    \"status\": true,\n    \"due_date\": \"2023-02-04\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/tasks/create",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/tasks/assign/7/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1Nzc2LCJleHAiOjE2NzI5ODYwNzZ9.1E1NTAW7EShI9Qmlm_NClaht0Qoeb4IjIKFc6-0DbZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tasks/assign/7/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"assign",
+						"7",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/tasks/assigned",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1Nzc2LCJleHAiOjE2NzI5ODYwNzZ9.1E1NTAW7EShI9Qmlm_NClaht0Qoeb4IjIKFc6-0DbZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/tasks/assigned",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"tasks",
+						"assigned"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/team/member/2",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1Nzc2LCJleHAiOjE2NzI5ODYwNzZ9.1E1NTAW7EShI9Qmlm_NClaht0Qoeb4IjIKFc6-0DbZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/team/member/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"team",
+						"member",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/team/member/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1Nzc2LCJleHAiOjE2NzI5ODYwNzZ9.1E1NTAW7EShI9Qmlm_NClaht0Qoeb4IjIKFc6-0DbZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/team/member/all",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"team",
+						"member",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/team/member/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1Nzc2LCJleHAiOjE2NzI5ODYwNzZ9.1E1NTAW7EShI9Qmlm_NClaht0Qoeb4IjIKFc6-0DbZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"mem 6\",\n    \"teamId\": \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/team/member/add",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"team",
+						"member",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/team/1",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1Nzc2LCJleHAiOjE2NzI5ODYwNzZ9.1E1NTAW7EShI9Qmlm_NClaht0Qoeb4IjIKFc6-0DbZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/team/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"team",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/team/createTeam",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1Nzc2LCJleHAiOjE2NzI5ODYwNzZ9.1E1NTAW7EShI9Qmlm_NClaht0Qoeb4IjIKFc6-0DbZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Team 4\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/team/createTeam",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"team",
+						"createTeam"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/team",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjcyOTg1Nzc2LCJleHAiOjE2NzI5ODYwNzZ9.1E1NTAW7EShI9Qmlm_NClaht0Qoeb4IjIKFc6-0DbZs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/team",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"team"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
