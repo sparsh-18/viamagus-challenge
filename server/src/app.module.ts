@@ -6,6 +6,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfigAsync } from './configs/typeorm.config';
 import { TaskModule } from './modules/tasks/tasks.module';
 import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './auth/auth.module';
+import { JwtAuthGuard } from './auth/jwt-auth.guard';
+import { APP_GUARD } from '@nestjs/core';
 
 @Module({
   imports: [
@@ -13,8 +16,12 @@ import { ConfigModule } from '@nestjs/config';
     TaskModule,
     TypeOrmModule.forRootAsync(typeOrmConfigAsync),
     ConfigModule.forRoot({ isGlobal: true }),
+    AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, {
+    provide: APP_GUARD,
+    useClass: JwtAuthGuard,
+  },],
 })
 export class AppModule {}
