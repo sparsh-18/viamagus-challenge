@@ -11,12 +11,12 @@ export class AuthService {
     ){}
 
     async validateUser(username: string, pass: string): Promise<any> {
-        // const user_name:string = this.configService.get('username');
-        // const password:string = this.configService.get('password');
+        const user_name:string = this.configService.get('username');
+        const password:string = this.configService.get('password');
         
         const user = {
-            username: "admin",
-            password: "12345"
+            username: user_name,
+            password: password
         }
         
         if (user.username === username && user.password === pass) {
